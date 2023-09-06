@@ -49,7 +49,7 @@
                         <div class="mt-7">
                             <ul class="grid md:grid-cols-2 gap-4">
                                 <li class="">
-                                    <a href="#" class="flex items-center justify-center bg-blue-dark text-white py-2 hover:bg-blue-tertiary">
+                                    <a href="{{ route('admin.index') }}" class="flex items-center justify-center bg-blue-dark text-white py-2 hover:bg-blue-tertiary">
                                         <span class="material-symbols-outlined mr-1.5">
                                             shield_person
                                         </span>

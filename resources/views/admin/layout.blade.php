@@ -55,7 +55,7 @@
                                 </span>
                             </a>
                         </li>
-                        <li class="mt-2.5">
+                        <li class="mt-3">
                             <small class="text-gray-500 font-light">Departments & Courses</small>
                         </li>
                         <li class="block py-2">
@@ -117,7 +117,7 @@
                                                 <small class="uppercase font-light">Admin</small>
                                             </div>
                                         </li>
-                                        <li class="block py-1.5">
+                                        <li class="block py-2">
                                             <a href="#" class="w-full flex justify-center items-center">
                                                 <span class="material-symbols-outlined mr-1">
                                                     account_circle

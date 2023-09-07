@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" dir="ltr">
 
 <head>
     <meta charset="UTF-8">
@@ -29,7 +29,7 @@
 
 
     <livewire:styles />
-    
+
 
     {{-- vite --}}
     @vite(['resources/css/app.css', 'resources/js/app.js'])
@@ -182,6 +182,5 @@
 
     @yield('script')
     @livewireScriptConfig
-    {{-- <livewire:scripts /> --}}
 </body>
 </html>

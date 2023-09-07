@@ -38,7 +38,7 @@
             <img src="{{ asset('img/login.jpg') }}" alt="header-1" class="rounded-l w-full h-[500px]">
             <div class="absolute inset-0 bg-blue-dark bg-opacity-40 rounded-l min-h-full"></div>
         </div>
-        <div class="md:w-[50%] p-5">
+        <div class="md:w-[50%] px-5 py-16">
             <div class="w-full">
                 <img src="{{ asset('logo.png') }}" alt="logo" class="w-[20%] mx-auto">
                 <div class="text-center mt-5">

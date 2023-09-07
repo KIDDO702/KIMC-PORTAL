@@ -13,6 +13,8 @@ return new class extends Migration
     {
         Schema::create('courses', function (Blueprint $table) {
             $table->uuid('id')->primary();
+            $table->string('code')->unique();
+            $table->string('slug')->unique();
             $table->foreignUuid('department_id')->references('id')->on('departments')->onDelete('cascade');
             $table->foreignId('level_id')->references('id')->on('course_levels')->onDelete('cascade'); // Courses Level Relationship
             $table->string('name');

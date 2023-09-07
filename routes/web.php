@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\DepartmentController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -23,7 +24,17 @@ Route::middleware('auth')->group( function () {
         return view('home');
     });
 
+    // Admin Routes Guarded by spatie roles
     Route::middleware('role:admin')->group( function() {
-        Route::get('/admin', [AdminController::class, 'index'])->name('admin.index');
+        Route::prefix('admin')->group( function () {
+            Route::get('/', [AdminController::class, 'index'])->name('admin.index');
+
+            // Department Routes & Controllers
+            Route::prefix('/deparment')->group(function () {
+                Route::get('/', [AdminController::class, 'department'])->name('admin.department');
+                Route::get('/create', [DepartmentController::class, 'create'])->name('department.create');
+                Route::post('/create', [DepartmentController::class, 'store'])->name('department.store');
+            });
+        });
     });
 });

@@ -28,14 +28,21 @@
         crossorigin="anonymous" referrerpolicy="no-referrer" />
 
 
+    <livewire:styles />
+
+
+    <script src="https://cdn.ckeditor.com/ckeditor5/39.0.2/classic/ckeditor.js"></script>
+    {{-- <script src="https//unpkg.com/alpinejs" defer></script> --}}
+    
     {{-- vite --}}
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
 
 <body class="bg-gray-100 antialiased font-poppins">
+    {{-- <livewire:toasts /> --}}
     <section class="w-full flex overflow-x-hidden">
-        <div class="hidden w-[20%] bg-blue-100 border-r border-blue-300 h-screen z-10 md:block">
-            <div class="py-10 px-5">
+        <div class="bg-blue-100 border-r border-blue-300 h-screen lg:fixed lg:w-[20%]">
+            <div class="hidden py-10 px-5 lg:block">
                 <div class="w-full">
                     <img src="{{ asset('logo.png') }}" alt="" class="w-[43%] mx-auto bg-blue-secondary p-2 rounded drop-shadow">
                 </div>
@@ -59,12 +66,22 @@
                             <small class="text-gray-500 font-light">Departments & Courses</small>
                         </li>
                         <li class="block py-2">
-                            <a href="{{ route('admin.index') }}" class="flex items-center">
+                            <a href="{{ route('admin.department') }}" class="flex items-center">
                                 <span class="material-symbols-outlined mr-1.5 text-blue-dark">
                                     apartment
                                 </span>
                                 <span>
                                     Departments
+                                </span>
+                            </a>
+                        </li>
+                        <li class="block py-2">
+                            <a href="{{ route('admin.index') }}" class="flex items-center">
+                                <span class="material-symbols-outlined mr-1.5 text-blue-dark">
+                                    stairs
+                                </span>
+                                <span>
+                                    Course Level
                                 </span>
                             </a>
                         </li>
@@ -82,18 +99,16 @@
                 </div>
             </div>
         </div>
-        <div class="w-full md:w-[80%]">
-            <nav class="w-full bg-blue-100 border-b border-blue-300 sticky top-0 z-10">
+        <div class="w-full lg:ml-[20%] lg:w-[80%]">
+            <nav class="w-full bg-blue-100 border-b border-blue-300 fixed top-0 z-10">
                 <div class="w-[90%] mx-auto flex items-center justify-between py-1.5 md:w-[95%]">
-                    <div>
+                    <div class="w-[80%] flex justify-between">
                         <button class="flex items-center justify-center p-2">
                             <span class="material-symbols-outlined text-2xl text-blue-dark">
                                 lists
                             </span>
                         </button>
-                    </div>
-                    <div>
-                        <ul class="flex items-center space-x-4">
+                        <ul class="flex items-center space-x-8">
                             <li class="flex items-center justify-center">
                                 <a class="cursor-pointer flex items-center justify-center">
                                     <span class="material-symbols-outlined text-2xl">
@@ -108,8 +123,9 @@
                                         expand_more
                                     </span>
                                 </a>
-
-                                <div class="absolute top-0 left-0 mt-10 bg-blue-100 border border-blue-200 pt-3" x-show="dropDown" x-cloak x-transition @click.outside="dropDown = false">
+                        
+                                <div class="absolute z-10 top-0 left-0 mt-10 bg-blue-100 border border-blue-200 pt-3" x-show="dropDown" x-cloak
+                                    x-transition @click.outside="dropDown = false">
                                     <ul class="w-full divide-y divide-blue-300">
                                         <li class="flex justify-center w-full py-1.5">
                                             <div class="text-center">
@@ -142,17 +158,32 @@
                                             </form>
                                         </li>
                                     </ul>
-                                </div>
-                            </li>
+                                </div> 
+                            </li>       
                         </ul>
+                    </div>
+                    <div>
                     </div>
                 </div>
             </nav>
 
-            <div class="p-10 overflow-y-scroll">
+            <div class="p-10 mt-16">
                 @yield('body')
+            </div>
+            @php
+                $year = date('Y');
+            @endphp
+
+            <div class="bg-blue-100 border-t border-blue-300 py-3 flex items-center justify-center">
+                <h3 class="text-blue-dark font-semibold">Copyright &copy; {{ $year }} Kenya Institute Of Mass Communication</h3>
             </div>
         </div>
     </section>
+
+
+
+    @yield('script')
+    <livewire:scripts />
+    @livewireScriptConfig
 </body>
 </html>

@@ -14,11 +14,12 @@ return new class extends Migration
         Schema::create('departments', function (Blueprint $table) {
             $table->uuid('id')->primary();
             $table->string('name');
+            $table->string('slug')->unique();
             $table->boolean('type')->default(0)->comment('Academic / Administrative'); // Academic / Administrative
-            $table->text('description');
+            $table->longText('description')->nullable();
             $table->string('location')->nullable();
-            $table->string('contact_number');
-            $table->string('thumbnail');
+            $table->string('contact')->nullable();
+            $table->string('thumbnail')->nullable();
             $table->timestamps();
         });
     }

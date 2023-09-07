@@ -29,17 +29,14 @@
 
 
     <livewire:styles />
-
-
-    <script src="https://cdn.ckeditor.com/ckeditor5/39.0.2/classic/ckeditor.js"></script>
-    {{-- <script src="https//unpkg.com/alpinejs" defer></script> --}}
     
+
     {{-- vite --}}
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
 
-<body class="bg-gray-100 antialiased font-poppins">
-    {{-- <livewire:toasts /> --}}
+<body class="bg-blue-50 antialiased font-poppins">
+    <livewire:toasts />
     <section class="w-full flex overflow-x-hidden">
         <div class="bg-blue-100 border-r border-blue-300 h-screen lg:fixed lg:w-[20%]">
             <div class="hidden py-10 px-5 lg:block">
@@ -102,7 +99,7 @@
         <div class="w-full lg:ml-[20%] lg:w-[80%]">
             <nav class="w-full bg-blue-100 border-b border-blue-300 fixed top-0 z-10">
                 <div class="w-[90%] mx-auto flex items-center justify-between py-1.5 md:w-[95%]">
-                    <div class="w-[80%] flex justify-between">
+                    <div class="w-full flex justify-between lg:w-[80%]">
                         <button class="flex items-center justify-center p-2">
                             <span class="material-symbols-outlined text-2xl text-blue-dark">
                                 lists
@@ -117,20 +114,20 @@
                                 </a>
                             </li>
                             <li class="flex items-center justify-center relative" x-data="{ dropDown:false }">
-                                <a class="cursor-pointer flex items-center justify-center" @click=" dropDown = !dropDown ">
-                                    <span class="font-light text-sm mr-1">{{ auth()->user()->name }}</span>
+                                <a class="cursor-pointer flex items-center justify-center hover:text-blue-950" @click=" dropDown = !dropDown ">
+                                    <span class="text-sm mr-1">{{ auth()->user()->name }}</span>
                                     <span class="material-symbols-outlined text-xs">
                                         expand_more
                                     </span>
                                 </a>
-                        
+
                                 <div class="absolute z-10 top-0 left-0 mt-10 bg-blue-100 border border-blue-200 pt-3" x-show="dropDown" x-cloak
                                     x-transition @click.outside="dropDown = false">
                                     <ul class="w-full divide-y divide-blue-300">
                                         <li class="flex justify-center w-full py-1.5">
                                             <div class="text-center">
                                                 <img src="{{ auth()->user()->avatar }}" alt="profile" class="rounded-full w-[60%] mx-auto">
-                                                <small class="uppercase font-light">Admin</small>
+                                                <small class="uppercase font-semibold text-gray-800">Admin</small>
                                             </div>
                                         </li>
                                         <li class="block py-2">
@@ -158,8 +155,8 @@
                                             </form>
                                         </li>
                                     </ul>
-                                </div> 
-                            </li>       
+                                </div>
+                            </li>
                         </ul>
                     </div>
                     <div>
@@ -170,12 +167,13 @@
             <div class="p-10 mt-16">
                 @yield('body')
             </div>
+
             @php
                 $year = date('Y');
             @endphp
 
             <div class="bg-blue-100 border-t border-blue-300 py-3 flex items-center justify-center">
-                <h3 class="text-blue-dark font-semibold">Copyright &copy; {{ $year }} Kenya Institute Of Mass Communication</h3>
+                <h3 class="text-blue-dark font-semibold uppercase text-center">Copyright &copy; {{ $year }} Kenya Institute Of Mass Communication</h3>
             </div>
         </div>
     </section>
@@ -183,7 +181,7 @@
 
 
     @yield('script')
-    <livewire:scripts />
     @livewireScriptConfig
+    {{-- <livewire:scripts /> --}}
 </body>
 </html>

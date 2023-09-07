@@ -1,3 +1,3 @@
-// import './alpine';
-// import './editor';
+import './alpine';
+import './editor';
 import './bootstrap';

@@ -35,7 +35,7 @@ class DepartmentController extends Controller
             'location' => 'required|min:4',
             'contact' => 'required|min:10',
             'type' => 'required|numeric',
-            'description' => 'required' 
+            'description' => 'required'
         ]);
 
         $slug = Str::slug($validated['name']);
@@ -59,13 +59,13 @@ class DepartmentController extends Controller
             toast()
                 ->success('Department added succesfully')
                 ->push();
-            return redirect(route('admin.department'));
+            return redirect(route('department.create'));
         }
         else {
             toast()
                 ->danger('Something happed please  try again')
                 ->push();
-            return redirect(route('admin.department'));
+            return redirect(route('department.create'));
         }
 
     }

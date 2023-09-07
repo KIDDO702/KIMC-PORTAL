@@ -4,8 +4,3 @@ import ToastComponent from '../../vendor/usernotnull/tall-toasts/resources/js/ta
 Alpine.plugin(ToastComponent)
 
 Livewire.start()
-
-// import  Alpine  from "alpinejs";
-
-// window.Alpine = Alpine;
-// Alpine.start();

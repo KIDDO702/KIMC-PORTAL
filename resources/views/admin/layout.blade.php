@@ -60,7 +60,7 @@
                             </a>
                         </li>
                         <li class="mt-3">
-                            <small class="text-gray-500 font-light">Departments & Courses</small>
+                            <small class="text-gray-500 font-light">Academics</small>
                         </li>
                         <li class="block py-2">
                             <a href="{{ route('admin.department') }}" class="flex items-center">
@@ -177,9 +177,6 @@
             </div>
         </div>
     </section>
-
-
-
     @yield('script')
     @livewireScriptConfig
 </body>

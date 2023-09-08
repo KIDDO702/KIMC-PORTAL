@@ -20,6 +20,7 @@ return new class extends Migration
             $table->string('location')->nullable();
             $table->string('contact')->nullable();
             $table->string('thumbnail')->nullable();
+            $table->boolean('featured')->default(0); // Checks if its feauted on the website
             $table->timestamps();
         });
     }

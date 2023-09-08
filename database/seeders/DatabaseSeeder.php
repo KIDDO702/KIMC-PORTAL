@@ -3,6 +3,8 @@
 namespace Database\Seeders;
 
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+
+use App\Models\Department;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
@@ -23,6 +25,13 @@ class DatabaseSeeder extends Seeder
         $this->call(AdminSeeder::class);
         $this->call(StaffSeeder::class);
         $this->call(StudentSeeder::class);
+
+        Department::factory()
+            ->times(10)
+            ->state([
+                'created_at' => fn () => now()->subMinutes(rand(0, 59))
+            ])
+            ->create();
 
     }
 }

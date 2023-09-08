@@ -2,7 +2,7 @@
 
 @section('body')
     <div class="bg-white drop-shadow-sm w-full rounded">
-        <div class="flex items-center justify-between py-2 px-10">
+        <div class="flex items-center justify-between py-2 px-8">
             <div>
                 <h3 class="font-bold uppercase text-blue-950 text-2xl">Departments</h3>
             </div>
@@ -42,6 +42,11 @@
                     </span>
                 </a>
             </div>
+        </div>
+
+        <hr class="border-gray-200 my-7">
+        <div class="">
+            <livewire:admin.department-table />
         </div>
     </div>
 @endsection

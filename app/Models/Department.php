@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Department extends Model
 {
-    use HasFactory, HasUuids;
+    use HasFactory, HasUuids, HasFactory;
 
     protected $fillable = [
         'name',
@@ -17,6 +17,7 @@ class Department extends Model
         'description',
         'location',
         'contact',
-        'thumbnail'
+        'thumbnail',
+        'featured'
     ];
 }

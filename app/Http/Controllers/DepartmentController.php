@@ -54,6 +54,7 @@ class DepartmentController extends Controller
             $validated['thumbnail'] = $request->file('thumbnail')->store('department-uploads', 'public');
         }
 
+        $validated['featured'] = $request->has('featured');
         $saved = Department::create($validated);
         if ($saved) {
             toast()

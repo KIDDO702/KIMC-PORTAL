@@ -20,7 +20,7 @@ class StudentSeeder extends Seeder
             'email_verified_at' => now(),
             'password' => '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', // password
             'remember_token' => Str::random(10),
-            'avatar' => 'https://cof.org/sites/default/files/documents/files/NadiaBrighamSquare.jpg',
+            'avatar' => 'https://6dimensionsofhealing.com/wp-content/uploads/2018/01/Wellness-champion-image-1024x733.jpg',
             'date_of_birth' => fake()->date(),
             'gender' => 'male',
             'nationality' => 'kenya',

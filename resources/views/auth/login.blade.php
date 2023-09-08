@@ -35,7 +35,7 @@
 <body class="antialiased bg-blue-primary font-poppins flex items-center">
     <div class="mt-20 w-[65%] bg-gray-light mx-auto drop-shadow-md rounded flex flex-col-reverse md:flex-row">
         <div class="hidden md:block  md:w-[50%] relative h-full">
-            <img src="{{ asset('img/login.jpg') }}" alt="header-1" class="rounded-l w-full h-[500px]">
+            <img src="{{ asset('img/login.jpg') }}" alt="header-1" class="rounded-l w-full h-[550px]">
             <div class="absolute inset-0 bg-blue-dark bg-opacity-40 rounded-l min-h-full"></div>
         </div>
         <div class="md:w-[50%] px-5 py-16">

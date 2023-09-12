@@ -73,7 +73,7 @@
                             </a>
                         </li>
                         <li class="block py-2">
-                            <a href="{{ route('admin.index') }}" class="flex items-center">
+                            <a href="{{ route('admin.level') }}" class="flex items-center">
                                 <span class="material-symbols-outlined mr-1.5 text-blue-dark">
                                     stairs
                                 </span>
@@ -83,7 +83,7 @@
                             </a>
                         </li>
                         <li class="block py-2">
-                            <a href="{{ route('admin.index') }}" class="flex items-center">
+                            <a href="{{ route('admin.course') }}" class="flex items-center">
                                 <span class="material-symbols-outlined mr-1.5 text-blue-dark">
                                     contract
                                 </span>

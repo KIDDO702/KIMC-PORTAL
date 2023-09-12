@@ -26,12 +26,12 @@ class DatabaseSeeder extends Seeder
         $this->call(StaffSeeder::class);
         $this->call(StudentSeeder::class);
 
-        Department::factory()
-            ->times(10)
-            ->state([
-                'created_at' => fn () => now()->subMinutes(rand(0, 59))
-            ])
-            ->create();
+        // Department::factory()
+        //     ->times(100)
+        //     ->state([
+        //         'created_at' => fn () => now()->subMinutes(rand(0, 59))
+        //     ])
+        //     ->create();
 
     }
 }

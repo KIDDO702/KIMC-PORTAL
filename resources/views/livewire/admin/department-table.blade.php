@@ -1,5 +1,4 @@
 <div>
-    <livewire:delete-confirmation />
     <div class="w-full flex items-center justify-between">
         <div class="flex items-center justify-center space-x-2" x-data="{ perPage: @entangle('perPage') }">
             <h3>Show</h3>
@@ -13,15 +12,14 @@
         </div>
         <div class="flex items-center justify-center space-x-2">
             <h3>Categorize By</h3>
-            <select class="px-4 py-2 border border-gray-300">
-                <option value="id">Id</option>
+            <select wire:model='sortBy' class="px-4 py-2 border border-gray-300">
                 <option value="name">Name</option>
                 <option value="type">Type</option>
                 <option value="created_at">Date Added</option>
             </select>
         </div>
         <div>
-            <input type="text" placeholder="Search Department" class="border border-gray-400 px-3 py-2 rounded focus:outline-none">
+            <input wire:model.debounce='search' type="text" placeholder="Search Department" class="border border-gray-400 px-3 py-2 rounded focus:outline-none">
         </div>
     </div>
 
@@ -96,12 +94,12 @@
                             <small class="text-gray-700">{{ $department->created_at->diffForHumans() }}</small>
                         </td>
                         <td class="flex items-center justify-center py-3 pr-3">
-                            <a href="#" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">
+                            <a href="{{ route('department.edit', $department->id) }}" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">
                                 <span class="material-symbols-outlined">
                                     edit
                                 </span>
                             </a>
-                            <a href="#" class="font-medium text-red-600 dark:text-red-500 hover:underline">
+                            <a wire:click="deleteDepartment('{{ $department->id }}')" onclick="return confirm('Are you sure you want to delete this department?')" class="cursor-pointer font-medium text-red-600 dark:text-red-500 hover:underline">
                                 <span class="material-symbols-outlined">
                                     delete
                                 </span>

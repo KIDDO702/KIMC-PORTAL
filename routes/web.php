@@ -52,6 +52,8 @@ Route::middleware('auth')->group( function () {
                 Route::get('/', [AdminController::class, 'course'])->name('admin.course');
                 Route::get('/create', [CourseController::class, 'create'])->name('course.create');
                 Route::post('/create', [CourseController::class, 'store'])->name('course.store');
+                Route::get('/e/{course}', [CourseController::class, 'edit'])->name('course.edit');
+                Route::put('/e/{course}', [CourseController::class, 'update'])->name('course.update');
             });
         });
     });

@@ -25,7 +25,7 @@
         </div>
     </div>
 
-    <div class="bg-white py-4 px-10 mt-10 drop-shadow-sm rounded w-full">
+    <div class="bg-white py-5 px-10 mt-10 drop-shadow-sm rounded w-full">
         <div class="flex justify-between items-center">
             <div class="">
                 <h3 class="font-semibold text-lg">
@@ -47,7 +47,7 @@
 
         <hr class="border-gray-200 my-7">
         <div class="">
-
+            <livewire:admin.courses-table />
         </div>
     </div>
 @endsection

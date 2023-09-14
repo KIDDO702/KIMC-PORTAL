@@ -20,6 +20,8 @@ return new class extends Migration
             $table->string('name');
             $table->text('description');
             $table->integer('period')->comment('Period in Years'); // Period in years
+            $table->string('thumbnail')->nullable();
+            $table->boolean('featured')->default(0);
             $table->softDeletes();
             $table->timestamps();
         });

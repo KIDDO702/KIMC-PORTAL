@@ -4,6 +4,7 @@ namespace Database\Seeders;
 
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 
+use App\Models\CourseLevel;
 use App\Models\Department;
 use Illuminate\Database\Seeder;
 
@@ -25,6 +26,8 @@ class DatabaseSeeder extends Seeder
         $this->call(AdminSeeder::class);
         $this->call(StaffSeeder::class);
         $this->call(StudentSeeder::class);
+        $this->call(DepartmentSeeder::class);
+        $this->call(CourseLevelSeeder::class);
 
         // Department::factory()
         //     ->times(100)

@@ -27,10 +27,12 @@
         integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
 
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/habibmhamadi/multi-select-tag/dist/css/multi-select-tag.css">
 
     <livewire:styles />
 
 
+    <script src="https://cdn.jsdelivr.net/gh/habibmhamadi/multi-select-tag/dist/js/multi-select-tag.js"></script>
     {{-- vite --}}
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
@@ -89,6 +91,16 @@
                                 </span>
                                 <span>
                                     Courses
+                                </span>
+                            </a>
+                        </li>
+                        <li class="block py-2">
+                            <a href="{{ route('admin.unit') }}" class="flex items-center">
+                                <span class="material-symbols-outlined mr-1.5 text-blue-dark">
+                                    local_library
+                                </span>
+                                <span>
+                                    Course Units
                                 </span>
                             </a>
                         </li>

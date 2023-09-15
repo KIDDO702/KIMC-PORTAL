@@ -6,6 +6,7 @@ use Illuminate\Database\Eloquent\Concerns\HasUuids;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Course extends Model
@@ -32,5 +33,10 @@ class Course extends Model
     public function level(): BelongsTo
     {
         return $this->belongsTo(CourseLevel::class, 'level_id');
+    }
+
+    public function unit(): BelongsToMany
+    {
+        return $this->belongsToMany(Unit::class);
     }
 }

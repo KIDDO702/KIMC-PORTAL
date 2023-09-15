@@ -26,4 +26,9 @@ class AdminController extends Controller
     {
         return view('admin.course.index');
     }
+
+    public function unit(): View
+    {
+        return view('admin.unit.index');
+    }
 }

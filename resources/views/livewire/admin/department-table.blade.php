@@ -1,8 +1,7 @@
 <div>
     <div class="w-full flex items-center justify-between">
         <div class="flex items-center justify-center space-x-2" x-data="{ perPage: @entangle('perPage') }">
-            <h3>Show</h3>
-            <select wire:model='perPage' class="px-2 py-1 border border-gray-300" x-model="perPage" @change="$wire.updatePerPage(perPage)">
+            <select wire:model='perPage' class="bg-gray-50 mt-2 px-4 py-2 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-secondary block w-full dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"> x-model="perPage" @change="$wire.updatePerPage(perPage)">
                 <option value="10">10</option>
                 <option value="25">25</option>
                 <option value="50">50</option>
@@ -11,15 +10,14 @@
             <h3>Entries</h3>
         </div>
         <div class="flex items-center justify-center space-x-2">
-            <h3>Categorize By</h3>
-            <select wire:model='sortBy' class="px-4 py-2 border border-gray-300">
-                <option value="name">Name</option>
-                <option value="type">Type</option>
-                <option value="created_at">Date Added</option>
+            <select wire:model='sortBy' class="bg-gray-50 mt-2 px-4 py-2 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-secondary block w-full dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">>
+                <option selected>Type</option>
+                <option value="#">Administrative</option>
+                <option value="#">Academic</option>
             </select>
         </div>
-        <div>
-            <input wire:model.debounce='search' type="text" placeholder="Search Department" class="border border-gray-400 px-3 py-2 rounded focus:outline-none">
+        <div class="w-[45%]">
+            <input wire:model.debounce='search' type="text" placeholder="Search Department" class="w-full border border-gray-400 px-3 py-2 rounded focus:outline-none">
         </div>
     </div>
 

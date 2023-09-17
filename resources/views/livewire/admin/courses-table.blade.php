@@ -49,7 +49,7 @@
                     <th scope="col" class="py-3">
                         Code
                     </th>
-                    <th scope="col" class="py-3 pr-3">
+                    <th scope="col" class="py-3 pr-1">
                         Name
                     </th>
                     <th scope="col" class="py-3 pr-3">
@@ -88,7 +88,7 @@
                     <td class="py-3">
                         {{ $course->code }}
                     </td>
-                    <td class="py-3 pr-3">
+                    <td class="py-3 pr-1">
                         {{ $course->name }}
                     </td>
                     <td class="py-3 pr-3">
@@ -127,5 +127,8 @@
                 @endforeach
             </tbody>
         </table>
+    </div>
+    <div class="mt-5">
+        {{ $courses->links() }}
     </div>
 </div>

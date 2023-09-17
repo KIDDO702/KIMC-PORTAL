@@ -6,10 +6,14 @@ use App\Models\Course;
 use App\Models\CourseLevel;
 use App\Models\Department;
 use Livewire\Component;
+use Livewire\WithPagination;
 
 class CoursesTable extends Component
 {
-    public $courses;
+    use WithPagination;
+
+
+    // public $courses;
     public $departments;
     public $levels;
     public $selectedDepartment = null;
@@ -19,7 +23,7 @@ class CoursesTable extends Component
     {
         $this->departments = Department::pluck('name', 'id');
         $this->levels = CourseLevel::all();
-        $this->courses = Course::with('department', 'level')->get();
+        // $this->courses = Course::with('department', 'level')->get();
     }
 
     public function deleteCourse(Course $course)
@@ -41,11 +45,8 @@ class CoursesTable extends Component
 
     public function render()
     {
-        $query = Course::query();
-
-        if ($this->selectedDepartment) {
-            $query->where('department_id', $this->selectedDepartment);
-        }
-        return view('livewire.admin.courses-table');
+        return view('livewire.admin.courses-table', [
+            'courses' => Course::latest()->paginate(10)
+        ]);
     }
 }
